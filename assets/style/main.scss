@@ -1,3 +1,14 @@
+:root {
+  --max-list-width:272px;
+  --list-bg:#ebecf0
+
+}
+
 * {
   box-sizing: border-box !important;
+}
+
+html, body {
+  padding: 0;
+  margin:0;
 }
