@@ -8,26 +8,26 @@ export default [
     ],
   },
   {
-    title: 'new 1',
+    title: 'Requested',
     cards: [
       {
-        text: 'new 1',
+        text: 'Item 1',
       },
     ],
   },
   {
-    title: 'new 2',
+    title: 'Packaging',
     cards: [
       {
-        text: 'new 2',
+        text: 'Good',
       },
     ],
   },
   {
-    title: 'new4',
+    title: 'Delivered',
     cards: [
       {
-        text: 'new 4',
+        text: 'New Delhi',
       },
     ],
   },

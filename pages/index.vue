@@ -1,5 +1,6 @@
 <template>
   <div class="boards-page">
+    {{lists}}
     <section class="lists--section--wrapper">
       <!-- lists -->
       <draggable
@@ -29,6 +30,11 @@ import Draggable from 'vuedraggable';
 import List from '@/components/boards-list/List';
 
 export default {
+  provide() {
+    return {
+      deleteList: this.deleteList,
+    };
+  },
   data() {
     return {
       lists,
@@ -51,7 +57,14 @@ export default {
 
   methods: {
     createList() {
-      this.lists.push({ title: 'dsf ', cards: [] });
+      this.lists.push({ title: 'List Title ', cards: [] });
+    },
+    deleteList(delTitle) {
+      const con = confirm(`You are about to delete the "${delTitle}" list`);
+      if (!con) {
+        return;
+      }
+      this.lists = this.lists.filter(({ title }) => title !== delTitle);
     },
   },
 

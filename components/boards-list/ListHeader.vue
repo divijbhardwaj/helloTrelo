@@ -1,11 +1,16 @@
 <template>
-  <div class="list--header drag-handle" @click="handleHeaderClick">
-    <input @click="handleFieldClick" type="text" :value="listData.title"/>
+  <div class="list--header drag-handle">
+    <input class="list-title" :disabled="true" type="text" v-model="value"/>
+    <ListOptions @del-list="deleteList(listData.title)"/>
   </div>
 </template>
 
 <script>
 export default {
+  inject: ['deleteList'],
+  components: {
+    ListOptions: () => import('@/components/boards-list/ListOptions'),
+  },
   props: {
     listData: {
       type: Object,
@@ -13,32 +18,47 @@ export default {
       default: () => ({}),
     },
   },
+  watch: {
+    value: {
+      handler() {
+        const ld = this.listData;
+        ld.title = this.value;
+      },
+      deep: true,
+    },
+    listData: {
+      handler() {
+        this.value = this.listData.title;
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
   data() {
     return {
-      value: 'sdf',
+      value: '',
     };
-  },
-  methods: {
-    handleFieldClick() {
-      console.log('field-clicked');
-    },
-    handleHeaderClick() {
-      console.log('header-clicked');
-    },
   },
 };
 </script>
 
 <style lang="scss">
 .list--header {
+  cursor: pointer;
   width:100%;
   height:40px;
   padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 
-  input {
+  .list-title {
+    flex:1;
+    cursor: pointer;
     height:100%;
     width:100%;
     background-color: white;
+    margin-right:8px;
   }
 }
 </style>
