@@ -1,8 +1,9 @@
 <template>
   <div class="list--body">
     <!-- <div class="overflow-test"></div> -->
-    <draggable class="list-group" :list="cards" group="people">
-      <template v-for="(card, i) in cards">
+    {{listData.cards}}
+    <draggable class="list-group" :list="listData.cards" group="people">
+      <template v-for="(card, i) in listData.cards">
         <div class="card" :key="i">
           {{card.text}}
         </div>
@@ -24,11 +25,6 @@ export default {
       required: false,
       default: () => ({}),
     },
-  },
-  data() {
-    return {
-      cards: this.listData.cards,
-    };
   },
 };
 </script>
