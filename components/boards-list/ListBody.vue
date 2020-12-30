@@ -22,7 +22,9 @@
             <v-card width="250px">
               <v-textarea v-model="editedCardText"/>
               <v-btn small color="green"
-              dark @click="card.text = editedCardText; cardUpdated = true"> save</v-btn>
+                dark @click="card.text = editedCardText; cardUpdated = true"> save</v-btn>
+                <v-btn small color="orange"
+                dark @click="deleteCard(i)"> Delete Card</v-btn>
             </v-card>
           </v-menu>
           <!-- edit dialog end -->
@@ -62,6 +64,12 @@ export default {
       disabled: false,
       ghostClass: 'ghost',
     }),
+  },
+  methods: {
+    deleteCard(i) {
+      const cardsData = this.listData.cards;
+      cardsData.splice(i, 1);
+    },
   },
 };
 </script>
