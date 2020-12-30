@@ -130,6 +130,7 @@ export default {
         .card-text {
           width:100%;
           overflow: hidden;
+          margin: 0;
         }
       }
     }
