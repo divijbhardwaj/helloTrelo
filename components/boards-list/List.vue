@@ -24,7 +24,7 @@ export default {
   methods: {
     createCard() {
       const cardsData = this.listData.cards;
-      cardsData.push({ text: 'bye' });
+      cardsData.push({ text: 'Add Text...' });
     },
   },
 };
