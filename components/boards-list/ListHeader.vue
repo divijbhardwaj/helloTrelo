@@ -1,6 +1,8 @@
 <template>
   <div class="list--header drag-handle">
-    <input class="list-title" :disabled="true" type="text" v-model="value"/>
+    <input class="list-title"
+      @focus="editable = true" @blur="()=>editable = false"
+      :class="editable? 'editable': 'not-editable'" type="text" v-model="value"/>
     <ListOptions @del-list="deleteList(listData.title)"/>
   </div>
 </template>
@@ -37,6 +39,7 @@ export default {
   data() {
     return {
       value: '',
+      editable: false,
     };
   },
 };
@@ -57,8 +60,18 @@ export default {
     cursor: pointer;
     height:100%;
     width:100%;
-    background-color: white;
     margin-right:8px;
+    border-radius: 3px;
+    outline: none;
+    text-indent: 5px;
+
+    &.editable {
+      background-color: white;
+      outline: 1px solid rgb(0, 183, 255);
+    }
+    &.not-editable {
+      background-color: transparent;
+    }
   }
 }
 </style>
