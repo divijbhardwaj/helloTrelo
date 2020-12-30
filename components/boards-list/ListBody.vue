@@ -1,6 +1,6 @@
 <template>
   <div class="list--body">
-    <!-- <div class="overflow-test"></div> -->
+    <div class="overflow-test"></div>
     <draggable class="list-group" :list="cards" group="people">
       <template v-for="(card, i) in cards">
         <div class="card" :key="i">

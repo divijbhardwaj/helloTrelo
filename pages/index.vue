@@ -1,10 +1,8 @@
 <template>
   <div class="boards-page">
-    <!-- {{lists}} -->
-    <!-- list container -->
-    <!-- <div class="lists--section"> -->
-
-       <draggable
+    <section class="lists--section--wrapper">
+      <!-- lists -->
+      <draggable
         class="lists--section"
         tag="div"
         v-model="lists"
@@ -18,9 +16,11 @@
             :list-data="listData"
             aria-hidden="true" :key="i"/>
         </template>
-       </draggable>
-       <CreateList @create-list="createList"/>
-    <!-- </div> -->
+              <!-- <CreateList @create-list="createList"/> -->
+      </draggable>
+      <!-- create lists -->
+      <CreateList @create-list="createList"/>
+    </section>
   </div>
 </template>
 
@@ -64,30 +64,37 @@ export default {
   max-height: 100vh;
   padding:8px;
 
-  .lists--section {
-    height:100%;
+  .lists--section--wrapper {
+    height: 100%;
     width:100%;
     display: flex;
-    flex-flow: row nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
-    padding-bottom:8px;
 
-    .ghost {
-      position: relative;
-      background-color: transparent;
+    .lists--section {
+      height:100%;
+      width:fit-content;
+      display: flex;
+      flex-flow: row nowrap;
+      padding-bottom:8px;
 
-      >div {
-        opacity: 0;
-      }
-      &::after {
-        content:' ';
-        position: absolute;
-        border-radius: 3px;
-        top:0;
-        left: 0;
-        width:100%;
-        height:100%;
-        background-color: rgba(0,0,0,.32);
+      .ghost {
+        position: relative;
+        background-color: transparent;
+
+        >div {
+          opacity: 0;
+        }
+        &::after {
+          content:' ';
+          position: absolute;
+          border-radius: 3px;
+          top:0;
+          left: 0;
+          width:100%;
+          height:100%;
+          background-color: rgba(0,0,0,.32);
+        }
       }
     }
   }
