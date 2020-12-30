@@ -45,9 +45,5 @@ export default {
     min-width: var(--max-list-width);
     max-width: var(--max-list-width);
     margin-right:8px;
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 </style>

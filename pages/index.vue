@@ -1,5 +1,6 @@
 <template>
   <div class="boards-page">
+          {{lists}}
     <section class="lists--section--wrapper">
       <!-- lists -->
       <draggable
@@ -50,7 +51,7 @@ export default {
 
   methods: {
     createList() {
-      this.lists.push({ title: 'dsf ', cards: [] });
+      this.lists = [...this.lists, { title: 'dsf ', cards: [] }];
     },
   },
 

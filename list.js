@@ -3,7 +3,7 @@ export default [
     title: 'How It Works',
     cards: [
       {
-        text: 'hello',
+        text: 'works',
       },
     ],
   },
@@ -11,7 +11,7 @@ export default [
     title: 'new 1',
     cards: [
       {
-        text: 'hello',
+        text: 'new 1',
       },
     ],
   },
@@ -19,7 +19,7 @@ export default [
     title: 'new 2',
     cards: [
       {
-        text: 'hello',
+        text: 'new 2',
       },
     ],
   },
@@ -27,7 +27,7 @@ export default [
     title: 'new4',
     cards: [
       {
-        text: 'hello',
+        text: 'new 4',
       },
     ],
   },
