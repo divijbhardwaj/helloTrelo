@@ -27,6 +27,7 @@
 <script>
 import lists from '@/list';
 import Draggable from 'vuedraggable';
+import List from '@/components/boards-list/List';
 
 export default {
   data() {
@@ -36,7 +37,7 @@ export default {
     };
   },
   components: {
-    List: () => import('@/components/boards-list/List'),
+    List,
     CreateList: () => import('@/components/boards-list/CreateList'),
     Draggable,
   },
