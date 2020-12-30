@@ -16,11 +16,6 @@ export default {
       default: () => ({}),
     },
   },
-  data() {
-    return {
-      lData: this.listData,
-    };
-  },
   components: {
     ListHeader: () => import('@/components/boards-list/ListHeader'),
     ListBody: () => import('@/components/boards-list/ListBody'),
@@ -28,7 +23,8 @@ export default {
   },
   methods: {
     createCard() {
-      this.lData.cards.push({ text: 'bye' });
+      const cardsData = this.listData.cards;
+      cardsData.push({ text: 'bye' });
     },
   },
 };
