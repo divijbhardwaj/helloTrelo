@@ -1,6 +1,5 @@
 <template>
   <div class="boards-page">
-          {{lists}}
     <section class="lists--section--wrapper">
       <!-- lists -->
       <draggable
@@ -61,9 +60,9 @@ export default {
 
 <style lang="scss">
 .boards-page{
-  // background-image: url("https://trello-backgrounds.s3.amazonaws.com/5e627d9fa6c99f7637f32c47/2560x1440/e93a3b56f1e677578e6059be2d9f8694/crmble_trello_order-mgmt.png");
-  // background-position: 50%;
-  // background-size: cover;
+  background-image: url("https://trello-backgrounds.s3.amazonaws.com/5e627d9fa6c99f7637f32c47/2560x1440/e93a3b56f1e677578e6059be2d9f8694/crmble_trello_order-mgmt.png");
+  background-position: 50%;
+  background-size: cover;
   height: 100%;
   max-height: 100vh;
   padding:8px;

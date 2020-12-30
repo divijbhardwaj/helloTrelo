@@ -1,6 +1,5 @@
 <template>
   <div class="list--container">
-    {{listData}}
     <ListHeader :listData="listData"/>
     <ListBody :listData="listData"/>
     <ListFooter @create-card="createCard" :listData="listData"/>
