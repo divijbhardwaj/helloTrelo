@@ -1,10 +1,16 @@
 <template>
-  <div class="list--footer"></div>
+  <div class="list--footer" @click="createCard">
+    create card
+  </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    createCard() {
+      this.$emit('create-card');
+    },
+  },
 };
 </script>
 

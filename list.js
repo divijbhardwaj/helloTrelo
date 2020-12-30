@@ -8,7 +8,7 @@ export default [
     ],
   },
   {
-    title: 'How It Works',
+    title: 'new 1',
     cards: [
       {
         text: 'hello',
@@ -16,7 +16,7 @@ export default [
     ],
   },
   {
-    title: 'How It Works',
+    title: 'new 2',
     cards: [
       {
         text: 'hello',
@@ -24,7 +24,7 @@ export default [
     ],
   },
   {
-    title: 'How It Works',
+    title: 'new4',
     cards: [
       {
         text: 'hello',
