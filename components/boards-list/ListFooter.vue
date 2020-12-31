@@ -1,25 +1,23 @@
 <template>
   <div class="list--footer">
     <!-- edit card dialog -->
-
-          <v-menu
-            offset-y
-            nudge-top="28px"
-            :close-on-content-click="cardUpdated"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <button v-on="on" v-bind="attrs" class="create-card--button"
-              @click.prevent="text='';cardUpdated=false">
-                <span>Add another card</span>
-              </button>
-            </template>
-            <v-card width="250px">
-              <v-textarea v-model="text"/>
-              <v-btn small color="green"
-                dark @click="createCard();cardUpdated = true;">Add card</v-btn>
-            </v-card>
-          </v-menu>
-
+    <v-menu
+      offset-y
+      nudge-top="28px"
+      :close-on-content-click="cardUpdated"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <button v-on="on" v-bind="attrs" class="create-card--button"
+        @click.prevent="text='';cardUpdated=false">
+          <span>Add another card</span>
+        </button>
+      </template>
+      <v-card width="250px">
+        <v-textarea v-model="text"/>
+        <v-btn small color="green"
+          dark @click="createCard();cardUpdated = true;">Add card</v-btn>
+      </v-card>
+    </v-menu>
     <!-- edit card dialog ends -->
   </div>
 </template>
