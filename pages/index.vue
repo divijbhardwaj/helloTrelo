@@ -78,7 +78,7 @@ export default {
   background-size: cover;
   height: 100%;
   max-height: 100vh;
-  padding:8px;
+  padding:20px 20px 8px;
 
   .lists--section--wrapper {
     height: 100%;
