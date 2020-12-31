@@ -67,6 +67,7 @@ export default {
   },
   methods: {
     deleteCard(i) {
+      this.cardUpdated = true;
       const cardsData = this.listData.cards;
       cardsData.splice(i, 1);
     },
