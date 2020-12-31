@@ -16,7 +16,7 @@
                 @click.prevent="editedCardText = card.text;
                 cardUpdated=false"
               >
-                <img class="edit-img" src="/images/edit-button.png" alt="edit">
+                <img class="edit-img" src="@/assets/edit-button.png" alt="edit">
               </button>
             </template>
             <v-card width="250px">
