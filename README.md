@@ -1,5 +1,7 @@
 # HelloTrelo
 
+## Demo
+[https://divijbhardwaj.github.io/helloTrelo/](https://divijbhardwaj.github.io/helloTrelo/)
 ## Build Setup
 
 ```bash
