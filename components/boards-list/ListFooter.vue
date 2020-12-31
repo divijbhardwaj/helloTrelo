@@ -42,7 +42,7 @@ export default {
 .list--footer{
   width:100%;
   // height:38px;
-  padding: 8px;
+  padding: 0 8px 8px;
 
   .create-card--button {
     width: 100%;

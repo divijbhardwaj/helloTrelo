@@ -76,6 +76,7 @@ export default {
 
 <style lang="scss">
 .list--body {
+  min-height: 30px;
   max-height: 100%;
   overflow-y: auto;
 
