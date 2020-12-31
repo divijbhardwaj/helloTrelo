@@ -1,6 +1,6 @@
 <template>
   <div class="boards-page">
-    {{lists}}
+    <!-- {{lists}} -->
     <section class="lists--section--wrapper">
       <!-- lists -->
       <draggable
