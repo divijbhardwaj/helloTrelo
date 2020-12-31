@@ -22,9 +22,9 @@ export default {
     ListFooter: () => import('@/components/boards-list/ListFooter'),
   },
   methods: {
-    createCard() {
+    createCard(text) {
       const cardsData = this.listData.cards;
-      cardsData.push({ text: 'Add Text...' });
+      cardsData.push({ text });
     },
   },
 };
