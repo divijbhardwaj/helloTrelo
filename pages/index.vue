@@ -19,7 +19,7 @@
         </template>
       </draggable>
       <!-- create lists -->
-      <CreateList @create-list="createList"/>
+      <CreateList :lists="lists" @create-list="createList"/>
     </section>
   </div>
 </template>
@@ -56,8 +56,8 @@ export default {
   },
 
   methods: {
-    createList() {
-      this.lists.push({ title: 'List Title ', cards: [] });
+    createList(title) {
+      this.lists.push({ title, cards: [] });
     },
     deleteList(delTitle) {
       const con = confirm(`You are about to delete the "${delTitle}" list`);

@@ -1,14 +1,51 @@
 <template>
-  <button class="create-list--button" @click="createList">
-    <span>Add another list</span>
-  </button>
+  <v-menu
+    offset-y
+    nudge-top="28px"
+    :close-on-content-click="listUpdated"
+  >
+    <template v-slot:activator="{ on, attrs }">
+      <button v-on="on" v-bind="attrs"
+        class="create-list--button" @click.prevent="title='';error='';listUpdated=false">
+        <span>Add another list</span>
+      </button>
+    </template>
+    <v-card width="250px">
+      <v-text-field :error-messages="error" label="List Title" v-model="title"/>
+      <v-btn small color="green"
+        dark @click="validate">Add List</v-btn>
+    </v-card>
+  </v-menu>
 </template>
 
 <script>
 export default {
+  props: {
+    lists: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
+  },
+  data() {
+    return {
+      listUpdated: false,
+      title: '',
+      error: '',
+    };
+  },
   methods: {
+    validate() {
+      const listExists = Boolean(this.lists.find((list) => list && list.title === this.title));
+      if (listExists) {
+        this.error = 'List already exists';
+        return;
+      }
+      this.listUpdated = true;
+      this.createList();
+    },
     createList() {
-      this.$emit('create-list');
+      this.$emit('create-list', this.title);
     },
   },
 };
